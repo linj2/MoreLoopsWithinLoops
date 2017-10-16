@@ -159,7 +159,7 @@ def largest_negative_number(seq_seq):
     where each subsequence contains only numbers.
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # TODONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     # CHALLENGE: Try to solve this problem with no additional sequences
@@ -411,7 +411,7 @@ def first_is_elsewhere_too(seq_seq):
     and the given argument is a sequence of sequences.
     """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # TODONE: 6. Implement and test this function.
     #          Some tests are already written for you (above).
     #
     # IMPLEMENTATION RESTRICTION:
@@ -427,6 +427,16 @@ def first_is_elsewhere_too(seq_seq):
     #   practice at loops within loops (within loops within ...)
     # ------------------------------------------------------------------
 
+    list = []
+    for i in range(1, len(seq_seq)):
+        for j in range(len(seq_seq[i])):
+            list +=[seq_seq[i][j]]
+    for x in range(len(seq_seq[0])):
+        a = seq_seq[0][x]
+        for y in range(len(list)):
+            if a == list[y]:
+                return True
+    return False
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
