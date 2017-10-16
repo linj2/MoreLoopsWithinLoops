@@ -10,8 +10,8 @@ Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
 def main():
     """ Calls the other functions to test them. """
     # run_test_largest_number()
-    run_test_largest_negative_number()
-    # run_test_first_is_elsewhere_too()
+    # run_test_largest_negative_number()
+    run_test_first_is_elsewhere_too()
 
 
 def run_test_largest_number():
@@ -121,19 +121,19 @@ def run_test_largest_negative_number():
     print('-------------------------------------------------')
     # Test 1:
     expected = -1
-    answer = largest_number([(-13, 4),
+    answer = largest_negative_number([(-13, 4),
                              (33, -10, 11, -7, 10),
                              (-1, 2, -31, -4)])
     print('Expected and actual are:', expected, answer)
 
     # Test 2:
     expected = -111111
-    answer = largest_number(([], [-111111], []))
+    answer = largest_negative_number(([], [-111111], []))
     print('Expected and actual are:', expected, answer)
 
     # Test 3:
     expected = None
-    answer = largest_number(([], [], []))
+    answer = largest_negative_number(([], [], []))
     print('Expected and actual are:', expected, answer)
 
 def largest_negative_number(seq_seq):
@@ -171,10 +171,9 @@ def largest_negative_number(seq_seq):
         for j in range(len(seq_seq[i])):
             if len(seq_seq[i]) and seq_seq[i][j] < 0:
                 list += [seq_seq[i][j]]
-
-
     if not list:
         return None
+
     max = list[0]
     for k in range(len(list)):
         if max < list[k]:
